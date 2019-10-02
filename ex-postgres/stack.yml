@@ -3,19 +3,18 @@ version: '3.1'
 
 services:
 
-  db:
+  db-docker:
     image: postgres
-    hostname: db
-    domainname: db.com
     restart: always
     environment:
       POSTGRES_PASSWORD: example
-      PGHOST: db
-      PGPORT: 5432
+      #PGPORT default: 5432
+      PGPORT: 5434
     volumes:
       - ~/Documents/docker/ex-postgres/vols/postgres/data:/var/lib/postgresql/data
     ports:
-        - 5432:5432
+        #Default for outside:inside is 5432:5432
+        - 5433:5434
 
   adminer:
     image: adminer
