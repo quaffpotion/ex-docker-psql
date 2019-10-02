@@ -5,11 +5,17 @@ services:
 
   db:
     image: postgres
+    hostname: db
+    domainname: db.com
     restart: always
     environment:
       POSTGRES_PASSWORD: example
+      PGHOST: db
+      PGPORT: 5432
     volumes:
       - ~/Documents/docker/ex-postgres/vols/postgres/data:/var/lib/postgresql/data
+    ports:
+        - 5432:5432
 
   adminer:
     image: adminer
