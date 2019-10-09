@@ -14,7 +14,8 @@ services:
       - ~/Documents/docker/ex-postgres/vols/postgres/data:/var/lib/postgresql/data
     ports:
         #Default for outside:inside is 5432:5432
-        - 5432:5432
+        #adminer by default uses the inside-5432 port
+        - 5437:5432
 
   adminer:
     image: adminer
