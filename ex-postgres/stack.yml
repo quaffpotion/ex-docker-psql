@@ -9,12 +9,12 @@ services:
     environment:
       POSTGRES_PASSWORD: example
       #PGPORT default: 5432
-      PGPORT: 5434
+      PGPORT: 5432
     volumes:
       - ~/Documents/docker/ex-postgres/vols/postgres/data:/var/lib/postgresql/data
     ports:
         #Default for outside:inside is 5432:5432
-        - 5433:5434
+        - 5432:5432
 
   adminer:
     image: adminer
