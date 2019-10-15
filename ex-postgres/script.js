@@ -15,7 +15,7 @@ const pool = new Pool({
   host: 'localhost',
   database: 'stocks',
   password: 'example',
-  port: 5433 //Default 5432
+  port: 5432 //Default 5432
 });
 pool.query('SELECT datname FROM pg_database', (err, res) => {
     if(err) {
